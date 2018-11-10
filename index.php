@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +20,7 @@ h1   {
 <body>
 <?php
 include_once 'includes/connection.php';
+session_start();
 ?>
 <h1><CENTER>Your</CENTER></h1>
 <h1><CENTER>Little Manager</CENTER></h1><br><br>

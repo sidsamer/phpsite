@@ -1,8 +1,3 @@
-<?php
-include_once 'includes/connection.php';
-$GLOBALS['tmp']="Notes.php";
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +22,11 @@ h1   {
 </style>
 
 <body>
+<?php
+include_once 'includes/connection.php';
+$GLOBALS['tmp']="Notes.php";
+session_start();
+?>
 <CENTER>
 <header><h1>Welcome </h1></header>
 <div class="navbar">

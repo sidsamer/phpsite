@@ -53,8 +53,8 @@ if(isset($_POST['page']))
 			$date=date("Y-m-d h:i:sa");
 			$pass=$_POST['Password'];
 			$email=$_POST['Email'];
-			$sql="INSERT INTO user(firstname,pass,email,regdate) ".
-			"values ('$User','$pass','$email','$date')";
+			$sql="INSERT INTO user(firstname,pass,email) ".
+			"values ('$User','$pass','$email')";
 			$res=mysqli_query($conn,$sql);
 			if(!$res)
 				die("query faild");
