@@ -1,3 +1,8 @@
+<?php
+include_once 'includes/connection.php';
+$GLOBALS['tmp']="Notes.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +28,7 @@ h1   {
 
 <body>
 <CENTER>
-<header><h1>Welcome</h1></header>
+<header><h1>Welcome </h1></header>
 <div class="navbar">
 <form action="menu.php" method='post' >
 <button type="submit" value="Notes" name="page">Notes</button>
@@ -32,9 +37,11 @@ h1   {
 </div>
 <br><br>
 <div class="container">
-<?php $tmp=$_POST['page'].".php";
+<?php 
+if(isset($_POST['page']))
+ $GLOBALS['tmp']=$_POST['page'].".php";
 ?>
-<iframe id="myFrame" src=<?php echo $tmp;?> name="myFrame" height="600px" width="100%" style="border:none;"></iframe>
+<iframe id="myFrame" src=<?php echo $GLOBALS['tmp'];?> name="myFrame" height="600px" width="100%" style="border:none;"></iframe>
 </div>
 </CENTER>
 </body>
