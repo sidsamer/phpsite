@@ -31,7 +31,7 @@ h1   {
 <form action='Notes.php' method='post' >
 <input type="text" name="NoteName" placeholder="enter new/exist Notes name" required><br>
 <input type="text" name="Note" placeholder="Edit/Create Note" required><br>
-<button type="submit" value="SignUp" name="submit">Create/Update</button>
+<button type="submit" value="Submit" name="submit">Create/Update</button>
 </form>
 </div>
 
@@ -46,7 +46,6 @@ if(isset($_POST['submit']))
 			$res=mysqli_query($conn,$sql);
 			if(!$res)
 				echo("query faild".mysqli_connect_error());
-			echo "<br>".$sql;
 }
  $sql="select title,body from note where id=".$_SESSION['Id'].";";
  $result=mysqli_query($conn,$sql);
