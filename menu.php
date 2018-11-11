@@ -32,7 +32,7 @@ session_start();
 <div class="navbar">
 <form action="menu.php" method='post' >
 <button type="submit" value="Notes" name="page">Notes</button>
-<button type="submit" value="Lists" name="page">Schedule</button>
+<button type="submit" value="Lists" name="page">Lists</button>
 </form>
 </div>
 <br><br>
