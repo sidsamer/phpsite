@@ -1,0 +1,30 @@
+body {
+	background-color: BlueViolet  ;
+ font-family:verdana;
+ color:white;
+ }
+h1   {
+ color:white;
+ padding:5px;
+ }
+ 
+ button{
+ background-color:Indigo;
+ color:white;
+ }
+ input[type=text] {
+
+    padding: 12px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 8px;
+}
+ input[type=email] {
+
+    padding: 12px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 8px;
+}

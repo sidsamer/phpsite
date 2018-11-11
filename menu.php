@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body {
-background-color: black;
- font-family:verdana;
- color:white
- }
-h1   {
- color:orange;
- padding 30px;
- }
- button{
- background-color:Indigo;
- color:orange;
- }
  .container {
  height:100%;
  width:100%;
@@ -28,7 +16,6 @@ $GLOBALS['tmp']="Notes.php";
 session_start();
 ?>
 <CENTER>
-<header><h1>Welcome </h1></header>
 <div class="navbar">
 <form action="menu.php" method='post' >
 <button type="submit" value="Notes" name="page">Notes</button>

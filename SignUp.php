@@ -1,30 +1,16 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-background-color: black;
- font-family:verdana;
- color:white}
-h1   {
- color:orange;
- padding 30px;
- }
- button{
- background-color:Indigo;
- color:orange;
- }
-</style>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <body>
 <?php
 include_once 'includes/connection.php';
 ?>
 <h1><CENTER>Sign-Up</CENTER></h1><br><br>
 <center><form action='SignUp.php' method='post'>
-<input type="text" placeholder="User Name" name="User" required><br><br>
-<input type="text" placeholder="password" name="Password" required><br><br>
-<input type="text" placeholder="password Check" name="Repassword" required><br><br>
+<input type="text" placeholder="User Name" name="User" required><br>
+<input type="text" placeholder="password" name="Password" required><br>
+<input type="text" placeholder="password Check" name="Repassword" required><br>
 <input type="email" placeholder="E-mail" name="Email" required><br><br>
 <button type="submit" value="submit" name="page">Submit</button><br><br>
 </form>

@@ -5,22 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-background-color: black;
- font-family:verdana;
- color:white
- }
-h1   {
- color:orange;
- padding 30px;
- }
- button{
- background-color:Indigo;
- color:orange;
- }
-</style>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <body>
 <?php
 

@@ -9,8 +9,4 @@ if(mysqli_connect_errno())
 {
 	die("Connection Faild!".mysqli_connect_error());
 }
-else
-{
-	echo "connected to database {$dbname}";
-}
 ?>
