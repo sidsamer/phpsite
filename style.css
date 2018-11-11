@@ -12,6 +12,13 @@ h1   {
  button{
  background-color:red;
  color:white;
+ border-radius: 8px;
+ border: 0px solid red;
+ font-size:15px;
+ padding: 10px 15px;
+ }
+ button:hover{
+	  border: 2px solid red;
  }
  input[type=text] {
 
@@ -37,8 +44,8 @@ a:hover {
 	font-size: 25px;
 }
 li{
-	border-bottom-style:solid;
+	border-bottom-style:dashed;
 	border-width: 1px;
 	padding-top:10px;
-}
+	list-style:none;
 }

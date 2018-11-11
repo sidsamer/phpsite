@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
 	     while($row=mysqli_fetch_assoc($result))
 	   {
 		
-		   echo "<li>".$row['title']."<br> ".$row['body']."</li>";
+		   echo "<li>".$row['title'].":<br> ".$row['body']."</li>";
 	   }
 	   }
 ?>
