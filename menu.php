@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -21,7 +22,6 @@ session_start();
 <button type="submit" value="Notes" name="page">Notes</button>
 <button type="submit" value="Lists" name="page">Lists</button>
 </form>
-
 <br><br>
 <div class="container">
 <?php 
