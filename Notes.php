@@ -21,7 +21,7 @@ function myFunction(id) {
 .NoteWidth button{
 background-color:green;
 position: absolute; 
-right: 5;
+right:0;
 padding: 5px 10px;
 border: 0px solid green;
 }
