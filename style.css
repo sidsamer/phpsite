@@ -13,19 +13,19 @@ h1   {
  background-color:black;
  color:white;
  border-radius: 8px;
- border: 0px solid red;
+ border: 0px solid black;
  font-size:15px;
  padding: 10px 15px;
  }
  button:hover{
-	  border: 2px solid red;
+	  border: 2px solid black;
  }
  input[type=text] {
 
     padding: 12px 20px;
     margin: 4px 0;
     box-sizing: border-box;
-    border: 2px solid red;
+    border: 2px solid black;
     border-radius: 8px;
 }
  input[type=email] {
@@ -33,14 +33,14 @@ h1   {
     padding: 12px 20px;
     margin: 4px 0;
     box-sizing: border-box;
-    border: 2px solid red;
+    border: 2px solid black;
     border-radius: 8px;
 }
 a:link {
     text-decoration: none;
 }
 a:hover {
-    text-shadow: 5px 3px red;
+    text-shadow: 5px 3px black;
 	font-size: 25px;
 }
 li{
