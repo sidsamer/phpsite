@@ -93,6 +93,7 @@ if(isset($_POST['submit']))
 			$res=mysqli_query($conn,$sql);
 			if(!$res)
 				echo("query faild".mysqli_connect_error());
+			header('Location: Notes.php'); 
 }
  $sql="select title,body,Noteid from note where id=".$_SESSION['Id'].";";
  $result=mysqli_query($conn,$sql);
