@@ -39,7 +39,7 @@ left:0;
 <header><h1>Notes<h1></header>
 <button class="NewButton" onclick="NoteBody('NoteForm');">New</button>
 <button class="RemoveButton" onclick="NoteBody('RemoveForm');">Remove</button>
-<br>
+<br><br><br>
 <div class="NoteForm"; id="NoteForm"; style="display:none;">
 <form action='Notes.php' method='post' >
 <input type="text" name="NoteName" placeholder="enter new/exist Notes name" required><br>
