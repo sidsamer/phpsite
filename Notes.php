@@ -9,6 +9,8 @@ session_start();
 <link rel="stylesheet" type="text/css" href="style.css">
 <head>
 <style>
+
+
 .NoteWidth button{
 background-color:gold;
 position: absolute; 
