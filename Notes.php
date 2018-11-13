@@ -57,7 +57,8 @@ if(isset($_POST['submit']))
 	     while($row=mysqli_fetch_assoc($result))
 	   {
 		   $tmp="'".$row['title']."'";
-		   echo "<li><p style='font-size:25px;'>".$row['title'].':</p><button onclick="NoteBody('.$tmp.');">+</button><br>'.
+		   $delbutton=$row['Noteid'];
+		   echo "<li><strong>".$row['title'].':</strong><br><button onclick="NoteBody('.$tmp.');">+</button><br>'.
 		   '<div id='.$tmp.' style="display:none;">'.$row['body'].'</div></li>';
 	   }
 	   }
