@@ -21,7 +21,7 @@ session_start();
 
 <form action="menu.php" method='post' >
 <button type="submit" value="Notes" name="page">Notes</button>
-<button type="submit" value="Lists" name="page">Lists</button>
+<button type="submit" value="Schedule" name="page">Schedule</button>
 </form>
 <br><br>
 <div class="container">

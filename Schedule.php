@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script src="javascript.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+.NewButton{
+	background-color:green;
+	position: absolute; 
+right:0;
+}
+.RemoveButton{
+	background-color:red;
+	position: absolute; 
+left:0;
+}
+</style>
+<body>
+<CENTER>
+<header><h1>Schedule<h1></header>
+<button class="NewButton" onclick="NoteBody('ScheduleForm');">New</button>
+<button class="RemoveButton" onclick="NoteBody('RemoveForm');">Remove</button>
+<br><br><br>
+<div class="ScheduleForm"; id="ScheduleForm"; style="display:none;">
+<form action='Schedule.php' method='post' >
+<input type="text" name="NoteName" placeholder="enter new/exist Notes name" required><br>
+<input type="text" name="Note" placeholder="Edit/Create Note" required><br>
+<button type="submit" value="SignUp" name="submit">Create/Update</button>
+</form>
+</div>
+<div class="board"; id="board";>
+<table style=" background-color:DarkSlateGray;">
+<th></th>
+<th>Sun</th>
+<th>Mon</th>
+<th>Tue</th>
+<th>Wed</th>
+<th>Thu</th>
+<th>Fri</th>
+<th>Sat</th>
+<?php
+for($i=0;$i<13;$i++)
+{
+?>
+<tr>
+<?php
+echo "<td>".($i+7).":00</td>";
+for($j=0;$j<7;$j++)
+{
+	?>
+<td>
+<button type="button" style=" background-color:black;";><?php echo "-"; ?></button>
+</td>
+<?php } ?>
+</tr>
+<?php } ?>
+</table>
+</div>
+</CENTER>
+</body>
+</html>
