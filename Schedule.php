@@ -1,3 +1,7 @@
+<?php
+include_once 'includes/connection.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <script src="javascript.js"></script>
@@ -20,15 +24,45 @@ left:0;
 <header><h1>Schedule<h1></header>
 <button class="NewButton" onclick="NoteBody('ScheduleForm');">New</button>
 <button class="RemoveButton" onclick="NoteBody('RemoveForm');">Remove</button>
+<button class="Toggle" onclick="NoteBody('board'); NoteBody('boards');">List/Board</button>
 <br><br><br>
 <div class="ScheduleForm"; id="ScheduleForm"; style="display:none;">
 <form action='Schedule.php' method='post' >
-<input type="text" name="NoteName" placeholder="enter new/exist Notes name" required><br>
-<input type="text" name="Note" placeholder="Edit/Create Note" required><br>
+<input type="text" name="Task" placeholder="Enter New Task" required><br>
+<input type="datetime-local" name="Deadline" required><br>
 <button type="submit" value="SignUp" name="submit">Create/Update</button>
 </form>
 </div>
-<div class="board"; id="board";>
+<div class="tasks"; id="boards"; style="display:block;">
+<ul>
+<?php
+if(isset($_POST['submit']))
+{
+	
+	$Deadline=$_POST['Deadline'];
+	$Task=$_POST['Task'];
+	$sql="INSERT INTO task(id,body,deadline) ".
+			"values (".$_SESSION['Id'].",'$Task','$Deadline');";
+			$res=mysqli_query($conn,$sql);
+			if(!$res)
+				echo("query faild".mysqli_connect_error());
+			header('Location: Schedule.php'); 
+
+}
+      $sql="select body,deadline from task where id=".$_SESSION['Id']." order by deadline asc;";
+ $result=mysqli_query($conn,$sql);
+        $resultCheck=mysqli_num_rows($result);
+        if($resultCheck>0)
+       {
+	     while($row=mysqli_fetch_assoc($result))
+	   {
+		   echo "<li>".$row['body'].'    '.$row['deadline'].'</li>';
+	   }
+	   }
+?>
+</ul>
+</div>
+<div class="board"; id="board"; style="display:none;">
 <table style=" background-color:DarkSlateGray;">
 <th></th>
 <th>Sun</th>

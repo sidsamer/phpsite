@@ -49,6 +49,16 @@ left:0;
 <button type="submit" value="Submit" name="submit">Create</button>
 </form>
 </div>
+<?php
+if(isset($_POST['RemoveSubmit']))
+{
+	$val=$_POST['RemoveNoteList'];
+	$sql="DELETE FROM note where Noteid=$val";
+	$res=mysqli_query($conn,$sql);
+			if(!$res)
+				echo("query faild".mysqli_connect_error());
+}
+?>
 <div class="RemoveForm"; id="RemoveForm"; style="display:none;">
 <form action="Notes.php" method='post'>
   <select name="RemoveNoteList">
@@ -71,16 +81,7 @@ left:0;
 <button type="submit" value="Submit" name="RemoveSubmit">Remove</button>
 </form>
 </div>
-<?php
-if(isset($_POST['RemoveSubmit']))
-{
-	$val=$_POST['RemoveNoteList'];
-	$sql="DELETE FROM note where Noteid=$val";
-	$res=mysqli_query($conn,$sql);
-			if(!$res)
-				echo("query faild".mysqli_connect_error());
-}
-?>
+
 <div class="NoteWidth">
 <ul>
 <?php
