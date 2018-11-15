@@ -18,6 +18,12 @@ right:0;
 	position: absolute; 
 left:0;
 }
+.container {
+ height:100%;
+ width:100%;
+ max-width: 500px;
+ }
+
 </style>
 <body>
 <CENTER>
@@ -95,33 +101,22 @@ if(isset($_POST['submit']))
 </ul>
 </div>
 <div class="board"; id="board"; style="display:none;">
-<table style=" background-color:DarkSlateGray;">
-<th></th>
-<th>Sun</th>
-<th>Mon</th>
-<th>Tue</th>
-<th>Wed</th>
-<th>Thu</th>
-<th>Fri</th>
-<th>Sat</th>
+<form action="Board.php"  method='post' target="myFrame2">
 <?php
-for($i=0;$i<13;$i++)
-{
-?>
-<tr>
-<?php
-echo "<td>".($i+7).":00</td>";
-for($j=0;$j<7;$j++)
+
+for($i=0;$i<7;$i++)
 {
 	?>
-<td>
-<button type="button" style=" background-color:black;";><?php echo "-"; ?></button>
-</td>
-<?php } ?>
-</tr>
-<?php } ?>
-</table>
+<button type="submit" value= "<?php echo date("Y-m-d", strtotime("+$i days")); ?>" name="dayButton"><?php echo date("l", strtotime("+$i days")); ?></button>
+<?php
+}
+?>
+</form>
+<div class="container">
+<iframe id="myFrame2" src="Board.php" name="myFrame2" height="600px" width="100%" style="border:none;"></iframe>
 </div>
+</div>
+
 </CENTER>
 </body>
 </html>
