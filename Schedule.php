@@ -33,6 +33,38 @@ left:0;
 <button type="submit" value="SignUp" name="submit">Create/Update</button>
 </form>
 </div>
+<?php
+if(isset($_POST['RemoveSubmit']))
+{
+	$val=$_POST['RemoveTaskList'];
+	$sql="DELETE FROM task where Taskid=$val";
+	$res=mysqli_query($conn,$sql);
+			if(!$res)
+				echo("query faild".mysqli_connect_error());
+}
+?>
+<div class="RemoveForm"; id="RemoveForm"; style="display:none;">
+<form action="Schedule.php" method='post'>
+  <select name="RemoveTaskList">
+  <?php
+  
+        $sql="select body,Taskid from task where id=".$_SESSION['Id'].";";
+        $result=mysqli_query($conn,$sql);
+        $resultCheck=mysqli_num_rows($result);
+        if($resultCheck>0)
+       {
+	     while($row=mysqli_fetch_assoc($result))
+	   {
+		  echo '<option value='.$row["Taskid"].'>'.$row["body"].'</option>';
+	   }
+	   }
+     
+  ?>
+  </select>
+  <br><br>
+<button type="submit" value="Submit" name="RemoveSubmit">Remove</button>
+</form>
+</div>
 <div class="tasks"; id="boards"; style="display:block;">
 <ul>
 <?php
