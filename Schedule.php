@@ -24,6 +24,14 @@ left:0;
  max-width: 500px;
  }
 
+.board button{
+	background-color:#0d0d3f  	;
+	 border-radius: 0px;
+ border: 1px solid DarkSlateGray;
+ padding: 10px 1px;
+ font-size:12px;
+ float: left;
+}
 </style>
 <body>
 <CENTER>
