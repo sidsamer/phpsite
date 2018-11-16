@@ -25,11 +25,11 @@ left:0;
  }
 
 .board button{
-	background-color:#0d0d3f  	;
+	background-color:RoyalBlue   	;
 	 border-radius: 0px;
  border: 1px solid DarkSlateGray;
  padding: 10px 1px;
- font-size:12px;
+ font-size:11px;
  float: left;
 }
 </style>
