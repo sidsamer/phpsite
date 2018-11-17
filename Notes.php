@@ -9,12 +9,13 @@ session_start();
 <link rel="stylesheet" type="text/css" href="style.css">
 <head>
 <style>
-
+textarea{
+	background-color:DarkGoldenRod ;
+}
 .NoteWidth button{
-background-color:gold ;
+background-color:DarkGoldenRod ;
 padding: 5px 10px;
-border: 0px solid gold;
-color:black;
+border: 1px solid white;
 }
 
  .noteWidth  button:active{
@@ -80,7 +81,7 @@ if(isset($_POST['RemoveSubmit']))
 </form>
 </div>
 
-<div class="NoteWidth">
+<div class="NoteWidth" style="background-color:DarkGoldenRod ;">
 <ul>
 <?php
 if(isset($_POST['submit']))
@@ -89,6 +90,17 @@ if(isset($_POST['submit']))
 	$Note=$_POST['Note'];
 	$sql="INSERT INTO note(id,title,body) ".
 			"values (".$_SESSION['Id'].",'$NoteName','$Note');";
+			$res=mysqli_query($conn,$sql);
+			if(!$res)
+				echo("query faild".mysqli_connect_error());
+			header('Location: Notes.php'); 
+}
+if(isset($_POST['editNote']))
+{
+	echo "byeeee";
+	$NoteName=$_POST['editNote'];
+	$Note=$_POST['body'];
+		$sql='update note set body="'.$Note.'" where title="'.$NoteName.'";';
 			$res=mysqli_query($conn,$sql);
 			if(!$res)
 				echo("query faild".mysqli_connect_error());
@@ -104,7 +116,10 @@ if(isset($_POST['submit']))
 		   $tmp="'".$row['title']."'";
 		   $delbutton=$row['Noteid'];
 		   echo "<li>".'<button onclick="NoteBody('.$tmp.');"><strong>'.$row["title"].'</strong></button><br>'.
-		   '<div id='.$tmp.' style="display:none;">'.$row['body'].'</div></li>';
+		   '<div id='.$tmp.' style="display:none;"><form action="Notes.php" method="POST">
+		   <textarea rows="4" cols="50" name="body">'.$row['body'].'</textarea><br>
+		   <button type="submit" value="'.$row["title"].'" name="editNote">Edit</button>
+		   </form></div></li>';
 	   }
 	   }
 ?>

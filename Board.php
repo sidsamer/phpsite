@@ -32,7 +32,7 @@ if(isset($_POST['dayButton']))
 	   {
 		   $date2 =new DateTime($row['deadline']);
 		   echo "<tr>";
-		   echo "<td>".$row['body']."</td><td style='color:Chartreuse;'>".date_format($date2,'H:i')."</td>";
+		    echo "<td>".$row['body']."</td><td style='color:Chartreuse;'>".date_format($date2,'H:i d-m-y')."</td>";
 		   echo "</tr>";
 	   }
 	   }
