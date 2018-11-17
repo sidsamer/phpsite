@@ -32,6 +32,14 @@ left:0;
  font-size:11px;
 float: left;
 }
+table{
+background-color:black;
+}
+td{
+    border-bottom: 2px solid white;
+	padding-up: 5px;
+	padding-right: 10px;
+}
 </style>
 <body>
 <CENTER>
@@ -80,7 +88,7 @@ if(isset($_POST['RemoveSubmit']))
 </form>
 </div>
 <div class="tasks"; id="boards"; style="display:block;">
-<ul>
+<table>
 <?php
 if(isset($_POST['submit']))
 {
@@ -102,11 +110,13 @@ if(isset($_POST['submit']))
        {
 	     while($row=mysqli_fetch_assoc($result))
 	   {
-		   echo "<li>".$row['body'].'    '.$row['deadline'].'</li>';
+		   echo "<tr>";
+		   echo "<td>".$row['body']."</td><td style='color:green;'>".$row['deadline'].'</td>';
+		   echo "</tr>";
 	   }
 	   }
 ?>
-</ul>
+</table>
 </div>
 <div class="board"; id="board"; style="display:none;">
 <form action="Board.php"  method='post' target="myFrame2">
