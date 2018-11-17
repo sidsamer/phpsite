@@ -6,7 +6,12 @@ session_start();
 <html>
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<style>
+background-color:black;
+li{
+    border-bottom-color:white;
+}
+</style>
 <body>
 <div class="tasks"; id="boards"; style="display:block;">
 <ul>
