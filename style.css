@@ -51,7 +51,8 @@ a:hover {
 	font-size: 25px;
 }
 li{
-	border-bottom-style:dashed;
+    border-bottom-color:navy;
+	border-bottom-style:solid;
 	border-width: 1px;
 	padding-top:10px;
 	list-style:none;

@@ -27,9 +27,10 @@ left:0;
 .board button{
 	background-color:RoyalBlue   	;
 	 border-radius: 0px;
- border: 0px solid DarkSlateGray;
+ border: 1px solid DarkSlateGray;
  padding: 10px 1px;
  font-size:11px;
+float: left;
 }
 </style>
 <body>

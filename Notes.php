@@ -10,11 +10,11 @@ session_start();
 <head>
 <style>
 
-
 .NoteWidth button{
-background-color:SeaGreen  ;
+background-color:gold ;
 padding: 5px 10px;
 border: 0px solid gold;
+color:black;
 }
 
  .noteWidth  button:active{
@@ -30,12 +30,6 @@ right:0;
 	background-color:red;
 	position: absolute; 
 left:0;
-}
-li{
-	background-color:DarkKhaki ;
-	border-bottom-style:solid;
-    border-bottom-color:navy;
-	color:black;
 }
 </style>
 </head>
