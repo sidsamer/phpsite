@@ -12,9 +12,7 @@ session_start();
 
 
 .NoteWidth button{
-background-color:gold;
-position: absolute; 
-right:0;
+background-color:SeaGreen  ;
 padding: 5px 10px;
 border: 0px solid gold;
 }
@@ -32,6 +30,12 @@ right:0;
 	background-color:red;
 	position: absolute; 
 left:0;
+}
+li{
+	background-color:DarkKhaki ;
+	border-bottom-style:solid;
+    border-bottom-color:navy;
+	color:black;
 }
 </style>
 </head>
@@ -105,7 +109,7 @@ if(isset($_POST['submit']))
 	   {
 		   $tmp="'".$row['title']."'";
 		   $delbutton=$row['Noteid'];
-		   echo "<li><strong>".$row['title'].':</strong><br><button onclick="NoteBody('.$tmp.');">+</button><br>'.
+		   echo "<li>".'<button onclick="NoteBody('.$tmp.');"><strong>'.$row["title"].'</strong></button><br>'.
 		   '<div id='.$tmp.' style="display:none;">'.$row['body'].'</div></li>';
 	   }
 	   }
