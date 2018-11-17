@@ -7,9 +7,7 @@ session_start();
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-table{
-background-color:black;
-}
+
 td{
     border-bottom: 2px solid white;
 	padding-up: 5px;
@@ -17,7 +15,7 @@ td{
 }
 </style>
 <body>
-<div class="tasks"; id="boards"; style="display:block;">
+<div class="tasks"; id="boards"; style="display:block; background-color:black;">
 <table>
 <?php
 if(isset($_POST['dayButton']))
@@ -32,8 +30,9 @@ if(isset($_POST['dayButton']))
        {
 	     while($row=mysqli_fetch_assoc($result))
 	   {
+		   $date2 =new DateTime($row['deadline']);
 		   echo "<tr>";
-		   echo "<td>".$row['body']."</td><td style='color:green;'>".$row['deadline'].'</td>';
+		   echo "<td>".$row['body']."</td><td style='color:Chartreuse;'>".date_format($date2,'H:i')."</td>";
 		   echo "</tr>";
 	   }
 	   }

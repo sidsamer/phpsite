@@ -110,8 +110,9 @@ if(isset($_POST['submit']))
        {
 	     while($row=mysqli_fetch_assoc($result))
 	   {
+		   $date2 =new DateTime($row['deadline']);
 		   echo "<tr>";
-		   echo "<td>".$row['body']."</td><td style='color:green;'>".$row['deadline'].'</td>';
+		   echo "<td>".$row['body']."</td><td style='color:Chartreuse;'>".date_format($date2,'H:i d-m-y')."</td>";
 		   echo "</tr>";
 	   }
 	   }
