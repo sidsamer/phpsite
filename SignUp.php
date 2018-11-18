@@ -8,7 +8,7 @@ include_once 'includes/connection.php';
 ?>
 <h1><CENTER>Sign-Up</CENTER></h1><br><br>
 <center><form action='SignUp.php' method='post'>
-<input type="text" placeholder="User Name" name="User" required><br>
+<input type="text" placeholder="User Name" name="User" required pattern="[^()/><\][\\\x22,'=;|]+"><br>
 <input type="text" placeholder="password" name="Password" required><br>
 <input type="text" placeholder="password Check" name="Repassword" required><br>
 <input type="email" placeholder="E-mail" name="Email" required><br><br>

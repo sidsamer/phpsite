@@ -40,6 +40,7 @@ td{
 	padding-up: 5px;
 	padding-right: 10px;
 }
+
 </style>
 <body>
 <CENTER>
@@ -49,7 +50,7 @@ td{
 <br><br><br>
 <div class="ScheduleForm"; id="ScheduleForm"; style="display:none;">
 <form action='Schedule.php' method='post' >
-<input type="text" name="Task" placeholder="Enter New Task" required><br>
+<input type="text" name="Task" placeholder="Enter New Task" required pattern="[^()/><\][\\\x22,'=;|]+"><br>
 <input type="datetime-local" name="Deadline" required><br>
 <button type="submit" value="SignUp" name="submit">Create/Update</button>
 </form>
@@ -69,14 +70,15 @@ if(isset($_POST['RemoveSubmit']))
   <select name="RemoveTaskList">
   <?php
   
-        $sql="select body,Taskid from task where id=".$_SESSION['Id'].";";
+        $sql="select body,Taskid,deadline from task where id=".$_SESSION['Id'].";";
         $result=mysqli_query($conn,$sql);
         $resultCheck=mysqli_num_rows($result);
         if($resultCheck>0)
        {
 	     while($row=mysqli_fetch_assoc($result))
 	   {
-		  echo '<option value='.$row["Taskid"].'>'.$row["body"].'</option>';
+		   $deadlineDate=new DateTime($row['deadline']);
+		  echo '<option value='.$row["Taskid"].'>'.$row["body"].' , '.date_format($deadlineDate,'H:i d-m-y').'</option>';
 	   }
 	   }
      

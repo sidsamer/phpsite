@@ -37,7 +37,7 @@ left:0;
 <br><br><br>
 <div class="NoteForm"; id="NoteForm"; style="display:none;">
 <form action='Notes.php' method='post' >
-<input type="text" name="NoteName" placeholder="enter new Note name" required><br>
+<input type="text" name="NoteName" placeholder="enter new Note name" required pattern="[^()/><\][\\\x22,'=;|]+"><br>
 <button type="submit" value="Submit" name="submit">Create</button>
 </form>
 </div>

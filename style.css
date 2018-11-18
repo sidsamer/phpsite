@@ -40,6 +40,21 @@ input[type=datetime-local] {
     border: 2px solid black;
     border-radius: 8px;
 }
+input[type=password] {
+
+    padding: 12px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+select{
+	  padding: 12px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 8px;
+}
 a:link {
     text-decoration: none;
 }

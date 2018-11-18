@@ -6,4 +6,13 @@ function NoteBody(id) {
         x.style.display = 'none';
     }
 }
+function ButtonOnFunc(obj){
+	
 
+	 if (obj.style.color == 'LightGray') {
+        obj.style.color = '#0080ff';
+    } else {
+        obj.style.color = 'LightGray';
+    }
+	
+}
