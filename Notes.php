@@ -10,16 +10,17 @@ session_start();
 <head>
 <style>
 textarea{
-	background-color:DarkGoldenRod ;
+	background-color:GoldenRod  ;
+	border:none;
 }
 .NoteWidth button{
-background-color:DarkGoldenRod ;
+background-color:GoldenRod  ;
 padding: 5px 10px;
 border: 1px solid white;
 }
 
  .noteWidth  button:active{
-	  border: 2px solid gold;
+	  border: 2px solid GoldenRod ;
 	  padding: 5px 20px;
  }
 .NewButton{
@@ -37,7 +38,7 @@ left:0;
 
 <body>
 <CENTER>
-<header><h1>Notes<h1></header>
+<header></header>
 <button class="NewButton" onclick="NoteBody('NoteForm');">New</button>
 <button class="RemoveButton" onclick="NoteBody('RemoveForm');">Remove</button>
 <br><br><br>
@@ -81,7 +82,8 @@ if(isset($_POST['RemoveSubmit']))
 </form>
 </div>
 
-<div class="NoteWidth" style="background-color:DarkGoldenRod ;">
+<div class="NoteWidth" style="background-color:GoldenRod ;">
+<h1 style="background-color:FireBrick  ;">Notes<h1>
 <ul>
 <?php
 if(isset($_POST['submit']))
@@ -117,7 +119,7 @@ if(isset($_POST['editNote']))
 		   $delbutton=$row['Noteid'];
 		   echo "<li>".'<button onclick="NoteBody('.$tmp.');"><strong>'.$row["title"].'</strong></button><br>'.
 		   '<div id='.$tmp.' style="display:none;"><form action="Notes.php" method="POST">
-		   <textarea rows="4" cols="50" name="body">'.$row['body'].'</textarea><br>
+		   <textarea rows="4" cols="50" name="body">'.$row['body'].'</textarea>
 		   <button type="submit" value="'.$row["title"].'" name="editNote">Edit</button>
 		   </form></div></li>';
 	   }
