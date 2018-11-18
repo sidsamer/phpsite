@@ -37,8 +37,7 @@ left:0;
 <br><br><br>
 <div class="NoteForm"; id="NoteForm"; style="display:none;">
 <form action='Notes.php' method='post' >
-<input type="text" name="NoteName" placeholder="enter new/exist Notes name" required><br>
-<input type="text" name="Note" placeholder="Edit/Create Note" required><br>
+<input type="text" name="NoteName" placeholder="enter new Note name" required><br>
 <button type="submit" value="Submit" name="submit">Create</button>
 </form>
 </div>
@@ -81,9 +80,8 @@ if(isset($_POST['RemoveSubmit']))
 if(isset($_POST['submit']))
 {
 	$NoteName=$_POST['NoteName'];
-	$Note=$_POST['Note'];
 	$sql="INSERT INTO note(id,title,body) ".
-			"values (".$_SESSION['Id'].",'$NoteName','$Note');";
+			"values (".$_SESSION['Id'].",'$NoteName','');";
 			$res=mysqli_query($conn,$sql);
 			if(!$res)
 				echo("query faild".mysqli_connect_error());
@@ -111,7 +109,7 @@ if(isset($_POST['editNote']))
 		   $delbutton=$row['Noteid'];
 		   echo "<li>".'<button onclick="NoteBody('.$tmp.');"><strong>'.$row["title"].'</strong></button><br>'.
 		   '<div id='.$tmp.' style="display:none;"><form action="Notes.php" method="POST">
-		   <textarea rows="4" cols="50" name="body">'.$row['body'].'</textarea>
+		   <textarea rows="7" cols="50" name="body">'.$row['body'].'</textarea>
 		   <button type="submit" value="'.$row["title"].'" name="editNote">Edit</button>
 		   </form></div></li>';
 	   }
