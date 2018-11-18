@@ -14,7 +14,7 @@
 	 padding: 20px;
  }
  header button{
- width:10%;
+ width:50%;
  }
 </style>
 
