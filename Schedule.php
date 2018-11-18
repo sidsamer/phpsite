@@ -9,12 +9,12 @@ session_start();
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
 .NewButton{
-	background-color:green;
+	background-color:#0080ff;
 	position: absolute; 
 right:0;
 }
 .RemoveButton{
-	background-color:red;
+	background-color:#0080ff;
 	position: absolute; 
 left:0;
 }
@@ -25,7 +25,7 @@ left:0;
  }
 
 .board button{
-	background-color:RoyalBlue   	;
+	background-color:#262626  	;
 	 border-radius: 0px;
  border: 1px solid DarkSlateGray;
  padding: 10px 1px;
@@ -43,9 +43,8 @@ td{
 </style>
 <body>
 <CENTER>
-<header><h1>Schedule<h1></header>
-<button class="NewButton" onclick="NoteBody('ScheduleForm');">New</button>
-<button class="RemoveButton" onclick="NoteBody('RemoveForm');">Remove</button>
+<button class="NewButton" onclick="NoteBody('ScheduleForm');">+</button>
+<button class="RemoveButton" onclick="NoteBody('RemoveForm');">X</button>
 <button class="Toggle" onclick="NoteBody('board'); NoteBody('boards');">List/Board</button>
 <br><br><br>
 <div class="ScheduleForm"; id="ScheduleForm"; style="display:none;">

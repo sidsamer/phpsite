@@ -9,6 +9,13 @@
  width:100%;
  max-width: 500px;
  }
+  header{
+	 background-color:#262626;
+	 padding: 20px;
+ }
+ header button{
+ width:10%;
+ }
 </style>
 
 <body>
@@ -18,12 +25,12 @@ $GLOBALS['tmp']="Notes.php";
 session_start();
 ?>
 <CENTER>
-
-<form action="menu.php" method='post' >
+<header>
+<form action="menu.php" method='post' style=" width:100%;" >
 <button type="submit" value="Notes" name="page">Notes</button>
 <button type="submit" value="Schedule" name="page">Schedule</button>
 </form>
-<br><br>
+</header>
 <div class="container">
 <?php 
 if(isset($_POST['page']))

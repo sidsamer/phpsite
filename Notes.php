@@ -7,40 +7,33 @@ session_start();
 <script src="javascript.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="style.css">
-<head>
 <style>
 textarea{
-	background-color:GoldenRod  ;
+	background-color:transparent ;
 	border:none;
+	color:LightGray;
 }
 .NoteWidth button{
-background-color:GoldenRod  ;
-padding: 5px 10px;
-border: 1px solid white;
+font-size:20px;
+width:100%;
 }
-
- .noteWidth  button:active{
-	  border: 2px solid GoldenRod ;
-	  padding: 5px 20px;
- }
 .NewButton{
-	background-color:green;
+	background-color:#0080ff ;
 	position: absolute; 
 right:0;
 }
 .RemoveButton{
-	background-color:red;
+	background-color:#0080ff ;
 	position: absolute; 
 left:0;
 }
 </style>
-</head>
 
 <body>
 <CENTER>
 <header></header>
-<button class="NewButton" onclick="NoteBody('NoteForm');">New</button>
-<button class="RemoveButton" onclick="NoteBody('RemoveForm');">Remove</button>
+<button class="NewButton" onclick="NoteBody('NoteForm');">+</button>
+<button class="RemoveButton" onclick="NoteBody('RemoveForm');">X</button>
 <br><br><br>
 <div class="NoteForm"; id="NoteForm"; style="display:none;">
 <form action='Notes.php' method='post' >
@@ -82,8 +75,7 @@ if(isset($_POST['RemoveSubmit']))
 </form>
 </div>
 
-<div class="NoteWidth" style="background-color:GoldenRod ;">
-<h1 style="background-color:FireBrick  ;">Notes<h1>
+<div class="NoteWidth">
 <ul>
 <?php
 if(isset($_POST['submit']))
