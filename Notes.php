@@ -79,6 +79,21 @@ if(isset($_POST['RemoveSubmit']))
 <?php
 if(isset($_POST['submit']))
 {
+	$flag=0;
+	$NoteName=$_POST['NoteName'];
+	 $sql="select title from note where id=".$_SESSION['Id'].";";
+	  $result=mysqli_query($conn,$sql);
+	  $resultCheck=mysqli_num_rows($result); 
+        if($resultCheck>0)
+       {
+	     while($row=mysqli_fetch_assoc($result))
+	   {
+		   if($NoteName==$row['title'])
+			   $flag++;
+	   }
+	   }
+	   if($flag==0)
+	   {
 	$NoteName=$_POST['NoteName'];
 	$sql="INSERT INTO note(id,title,body) ".
 			"values (".$_SESSION['Id'].",'$NoteName','');";
@@ -86,10 +101,15 @@ if(isset($_POST['submit']))
 			if(!$res)
 				echo("query faild".mysqli_connect_error());
 			header('Location: Notes.php'); 
+	   }
+	   else
+	   {
+	   echo "Note name already exist!";
+	   }
+	   
 }
 if(isset($_POST['editNote']))
 {
-	echo "byeeee";
 	$NoteName=$_POST['editNote'];
 	$Note=$_POST['body'];
 		$sql='update note set body="'.$Note.'" where title="'.$NoteName.'";';

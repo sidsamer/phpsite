@@ -47,7 +47,7 @@ if(isset($_POST['page']))
 			else
 			{
 				echo "welcome new member <br>";
-				echo "<a href='index.php'><button>Login page</button></a>";
+				header('Location: index.php'); 
 			}
 		}
 	     else
