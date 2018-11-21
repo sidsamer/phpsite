@@ -9,6 +9,14 @@
 include_once 'includes/connection.php';
 session_start();
 ?>
+<?php
+if(isset($_COOKIE['Id']))
+{
+	header('Location: menu.php'); 
+		 $_SESSION['User']=$_COOKIE['User'];
+		 $_SESSION['Id']=$_COOKIE['Id'];
+}
+?>
 <h1><CENTER>Your</CENTER></h1>
 <h1><CENTER>Little Manager</CENTER></h1><br><br>
 <center>
@@ -49,6 +57,8 @@ if(isset($_POST['page']))
 		}
 		else
 		{
+			setcookie('Id',$Id,time()+(60*60*24*7));
+			setcookie('User',$User,time()+(60*60*24*7));
          header('Location: menu.php'); 
 		 $_SESSION['User']=$User;
 		 $_SESSION['Id']=$Id;
